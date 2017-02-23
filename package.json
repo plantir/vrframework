@@ -1,0 +1,22 @@
+{
+  "name": "vrframework",
+  "version": "1.0.0",
+  "description": "a frame work with lumen and angular ",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vrwebdesign/vrframework.git"
+  },
+  "author": "armin kheirkhahan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vrwebdesign/vrframework/issues"
+  },
+  "homepage": "https://github.com/vrwebdesign/vrframework#readme"
+}
