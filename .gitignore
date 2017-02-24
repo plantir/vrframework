@@ -1,3 +1,10 @@
+.DS_Store
+.tmp
+.git
+node_modules
+.settings
+*.log
+dist/
 /vendor
 /.idea
 Homestead.json
