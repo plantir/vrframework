@@ -13,7 +13,6 @@ import gutil from 'gulp-util';
 import serve from 'browser-sync';
 import del from 'del';
 import webpackDevMiddleware from 'webpack-dev-middleware';
-``
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import colorsSupported from 'supports-color';
 import historyApiFallback from 'connect-history-api-fallback';
@@ -42,7 +41,7 @@ let paths = {
     path.join(__dirname, root, 'app/app.js')
   ],
   output: root,
-  blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**'),
+  blankTemplates: path.join(__dirname, 'FrontEndFramework/generator', 'component/**/*.**'),
   dest: path.join(__dirname, 'public/dist')
 };
 
@@ -90,7 +89,6 @@ gulp.task('serve', () => {
     server: {
       baseDir: root
     },
-    // proxy:"localhost:4800",
     middleware: [
       jsonPlaceholderProxy,
       historyApiFallback(),
@@ -103,7 +101,6 @@ gulp.task('serve', () => {
         publicPath: config.output.publicPath
       }),
       webpackHotMiddleware(compiler),
-
     ]
   });
 });
@@ -117,7 +114,6 @@ gulp.task('component', () => {
   const name = yargs.argv.name;
   const parentPath = yargs.argv.parent || '';
   const destPath = path.join(resolveToComponents(), parentPath, name);
-
   return gulp.src(paths.blankTemplates)
     .pipe(template({
       name: name,
