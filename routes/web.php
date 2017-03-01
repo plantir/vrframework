@@ -10,19 +10,56 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-$app->get('/api/new-path',function() use($app){
-    return response()->json(['name' => 'api', 'state' => 'CA']);
+// function rest($path, $controller)
+// {
+// 	global $app;
+	
+// 	$app->get($path, $controller.'@index');
+// 	$app->get($path.'/{id}', $controller.'@show');
+// 	$app->post($path, $controller.'@store');
+// 	$app->put($path.'/{id}', $controller.'@update');
+// 	$app->delete($path.'/{id}', $controller.'@destroy');
+// }
+$app->group(['prefix' => 'api'],function () use ($app) {
+    /**
+    * Routes for resource task
+    */
+    $app->get('task', 'TasksController@all');
+    $app->get('task/{id}', 'TasksController@get');
+    $app->post('task', 'TasksController@add');
+    $app->put('task/{id}', 'TasksController@put');
+    $app->delete('task/{id}', 'TasksController@remove');
+
+    /**
+    * Routes for resource test
+    */
+    $app->get('test', 'TestsController@all');
+    $app->get('test/{id}', 'TestsController@get');
+    $app->post('test', 'TestsController@add');
+    $app->put('test/{id}', 'TestsController@put');
+    $app->delete('test/{id}', 'TestsController@remove');
+
+    $app->group(['prefix' => 'admin','middleware' => 'auth.basic'],function () use ($app) {
+        $app->get('test', 'TestsController@all');
+    });
 
 });
-$app->get('/api/user',function() use($app){
-    return response()->json(['name' => 'Abigail', 'state' => 'CA']);
 
-});
 $app->get('/', function () use ($app) {
     return view('index',['title'=>'armin']);
-    // return response()->json(['name' => 'Abigail', 'state' => 'CA']);
 });
-$app->get('/path', function () use ($app) {
-    return 'Hello';
-    // return response()->json(['name' => 'Abigail', 'state' => 'CA']);
-});
+
+
+
+
+
+
+
+/**
+ * Routes for resource category
+ */
+$app->get('category', 'CategoriesController@all');
+$app->get('category/{id}', 'CategoriesController@get');
+$app->post('category', 'CategoriesController@add');
+$app->put('category/{id}', 'CategoriesController@put');
+$app->delete('category/{id}', 'CategoriesController@remove');
