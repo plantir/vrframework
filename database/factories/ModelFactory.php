@@ -11,16 +11,10 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Model\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
         'password' =>str_random(10),
-    ];
-});
-
-$factory->define(App\Test::class, function (Faker\Generator $faker) {
-    return [
-        'name' => $faker->boolean($chanceOfGettingTrue = 90),
     ];
 });
