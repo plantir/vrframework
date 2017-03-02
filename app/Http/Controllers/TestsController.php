@@ -6,7 +6,7 @@ class TestsController extends Controller {
     use RESTActions;
     public function __construct()
     {
-        echo "armin";
+
     }
 
 
