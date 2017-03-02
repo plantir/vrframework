@@ -65,6 +65,7 @@ $app->singleton(
 
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
+    'old' => App\Http\Middleware\OldMiddleware::class,
     'auth.basic' => Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
 ]);
 
@@ -80,7 +81,8 @@ $app->routeMiddleware([
 */
 
 $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
+
+$app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(Arubacao\BasicAuth\BasicGuardServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 

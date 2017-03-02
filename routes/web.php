@@ -20,37 +20,40 @@
 // 	$app->put($path.'/{id}', $controller.'@update');
 // 	$app->delete($path.'/{id}', $controller.'@destroy');
 // }
-$app->group(['prefix' => 'api'],function () use ($app) {
+// $app->group(['prefix' => 'api'],function () use ($app) {
     /**
     * Routes for resource task
     */
-    $app->get('task', 'TasksController@all');
-    $app->get('task/{id}', 'TasksController@get');
-    $app->post('task', 'TasksController@add');
-    $app->put('task/{id}', 'TasksController@put');
-    $app->delete('task/{id}', 'TasksController@remove');
+    // $app->get('task', 'TasksController@all');
+    // $app->get('task/{id}', 'TasksController@get');
+    // $app->post('task', 'TasksController@add');
+    // $app->put('task/{id}', 'TasksController@put');
+    // $app->delete('task/{id}', 'TasksController@remove');
 
     /**
     * Routes for resource test
     */
-    $app->get('test', 'TestsController@all');
-    $app->get('test/{id}', 'TestsController@get');
-    $app->post('test', 'TestsController@add');
-    $app->put('test/{id}', 'TestsController@put');
-    $app->delete('test/{id}', 'TestsController@remove');
+    // $app->get('test',['as' => 'test','uses' => 'TestsController@all']);
+    // $app->get('test/{id}',['as' => 'test2','uses' => 'TestsController@get']);
+    // $app->post('test', 'TestsController@add');
+    // $app->put('test/{id}', 'TestsController@put');
+    // $app->delete('test/{id}', 'TestsController@remove');
 
-    $app->group(['prefix' => 'admin','middleware' => 'auth.basic'],function () use ($app) {
-        $app->get('test', 'TestsController@all');
-    });
+    // $app->group(['prefix' => 'admin','middleware' => 'auth.basic'],function () use ($app) {
+    //     $app->get('test', 'TestsController@all');
+    // });
+    
 
-});
+// });
+use Illuminate\Http\Request;
 
-$app->get('/', function () use ($app) {
-    return view('index',['title'=>'armin']);
-});
+$app->get('api/post/{id}', ['middleware' => 'auth', function (Request $request, $id) {
+    $user = Auth::user();
 
+    $user = $request->user();
 
-
+    //
+}]);
 
 
 
@@ -58,8 +61,8 @@ $app->get('/', function () use ($app) {
 /**
  * Routes for resource category
  */
-$app->get('category', 'CategoriesController@all');
-$app->get('category/{id}', 'CategoriesController@get');
-$app->post('category', 'CategoriesController@add');
-$app->put('category/{id}', 'CategoriesController@put');
-$app->delete('category/{id}', 'CategoriesController@remove');
+// $app->get('category', 'CategoriesController@all');
+// $app->get('category/{id}', 'CategoriesController@get');
+// $app->post('category', 'CategoriesController@add');
+// $app->put('category/{id}', 'CategoriesController@put');
+// $app->delete('category/{id}', 'CategoriesController@remove');

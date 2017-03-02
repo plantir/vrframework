@@ -9,7 +9,8 @@
         "laravel/lumen-framework": "5.4.*",
         "vlucas/phpdotenv": "~2.2",
         "wn/lumen-generators": "^1.3",
-        "arubacao/http-basic-auth-guard": "^1.0"
+        "arubacao/http-basic-auth-guard": "^1.0",
+        "tymon/jwt-auth": "0.5.8"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
