@@ -10,3 +10,4 @@ dist/
 Homestead.json
 Homestead.yaml
 .env
+composer.lock
