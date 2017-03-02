@@ -46,14 +46,10 @@
 
 // });
 use Illuminate\Http\Request;
-
-$app->get('api/post/{id}', ['middleware' => 'auth', function (Request $request, $id) {
-    $user = Auth::user();
-
-    $user = $request->user();
-
-    //
-}]);
+use App\User;
+$app->get('api/post/{id}', function (Request $request, $id) {
+    return User::findOrFail($id);
+});
 
 
 
