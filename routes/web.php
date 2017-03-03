@@ -46,9 +46,10 @@
 
 // });
 use Illuminate\Http\Request;
-use App\User;
-$app->get('api/post/{id}', function (Request $request, $id) {
-    return User::findOrFail($id);
+use App\Model\User;
+$app->get('api/post', function (Request $request) {
+    
+    return User::ListOption($request->all());
 });
 
 

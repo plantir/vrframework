@@ -9,5 +9,5 @@ dist/
 /.idea
 Homestead.json
 Homestead.yaml
-.env
 composer.lock
+/.vscode
