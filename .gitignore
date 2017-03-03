@@ -1,7 +1,7 @@
 .DS_Store
 .tmp
 .git
-node_modules
+/node_modules
 .settings
 *.log
 dist/
@@ -10,4 +10,3 @@ dist/
 Homestead.json
 Homestead.yaml
 composer.lock
-/.vscode
