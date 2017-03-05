@@ -76,7 +76,7 @@ gulp.task('serve', () => {
   var compiler = webpack(config);
 
   var jsonPlaceholderProxy = proxy('/api', {
-    target: 'http://localhost:8001',
+    target: 'http://localhost:5600',
     changeOrigin: false, // for vhosted sites, changes host header to match to target's host
     logLevel: 'debug',
     pathRewrite: {

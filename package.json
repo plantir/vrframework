@@ -56,7 +56,7 @@
   "scripts": {
     "build": "gulp webpack",
     "component": "gulp component",
-    "serve": "php -S 127.0.0.1:8001 -t public | gulp serve",
+    "serve": "php -S 127.0.0.1:5600 -t public | gulp serve",
     "start": "gulp serve",
     "test": "karma start",
     "watch": "gulp serve",
